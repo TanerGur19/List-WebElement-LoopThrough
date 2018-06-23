@@ -32,7 +32,7 @@ public class PersonalInfoTest {
 		
 		
 	}
-	
+	// New class version
 	@Test
 	public void fullNameEmptyTest() {
 		
