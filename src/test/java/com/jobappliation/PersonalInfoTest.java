@@ -48,11 +48,11 @@ public class PersonalInfoTest {
 		
 		driver.findElement(By.xpath("//em[.=' Next ']")).click();  //  Specific text you can not use elname now.
 		
-		driver.findElement(By.xpath("//p[@class='errorMessage']")).getText();
-		driver.findElement(By.id("error-Name")).getText();
+		String nameError = driver.findElement(By.xpath("//p[@class='errorMessage']")).getText();
+		// String nameError2 = driver.findElement(By.id("error-Name")).getText();
 		
-		assertEquals(driver.findElement(By.xpath("//p[@class='errorMessage']")).getText(), "Enter a value for this field.");
-		assertEquals(driver.findElement(By.id("error-Name")).getText(), "Enter a value for this field.");
+		assertEquals(nameError, "Enter a value for this field.");
+		// assertEquals(nameError2, "Enter a value for this field.");
 	}
 	
 	
