@@ -180,7 +180,7 @@ public class PersonalInfoTests {
 		assertEquals(appId.substring(16), uniqueId);
 
 	}
-	
+	//
 	public void setCertifications(List<String> cert) { // homework  if you create methods because you can use it next time
 		// and it will be more organized.
 		for (int i = 0; i < cert.size(); i++) {
