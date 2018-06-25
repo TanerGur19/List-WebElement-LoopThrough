@@ -87,17 +87,17 @@ public class PersonalInfoTests {
 		driver.findElement(By.xpath("//input[@name='Address_Region']")).sendKeys(state);
 		Select countryElem = new Select(driver.findElement(By.xpath("//select[@id='Address_Country']")));
 		countryElem.selectByIndex(data.number().numberBetween(1, countryElem.getOptions().size()));
-//hmwrk
+
 		WebElement cntr = countryElem.getFirstSelectedOption();
 		String cntry = cntr.getText();
-//hmwrk
+
 		driver.findElement(By.xpath("//input[@name='Number']")).sendKeys(String.valueOf(annualSalary)+Keys.TAB);
 		verifySalaryCalculations(annualSalary);
 		driver.findElement(By.xpath("//em[.=' Next ']")).click();
 		
 		// second page action
 		setSkillset(technologies);
-//hmwrk
+
 		String techSkills = "";
 		for (int i = 0; i < technologies.size(); i++) {
 			techSkills += technologies.get(i).substring(0, technologies.get(i).length()-2) +
@@ -106,7 +106,7 @@ public class PersonalInfoTests {
 					findElement(By.xpath("//table//tr[" + (i+1) + "]//input[@matrixselectval='true']")).
 					getAttribute("columnvalue") + "  ";
 		}
-//hmwrk
+
 		if(yearsOfExperience > 0) {
 			driver.findElement(By.xpath("//a[@rating_value='" + yearsOfExperience + "']")).click();	
 		}
@@ -126,7 +126,7 @@ public class PersonalInfoTests {
 			  3) Goto your email and find the email and click on it
 			  by id. SDET Application #id
 		*/
-		// homework starts here
+		
 		driver.findElement(By.xpath("//input[@name='Website']")).sendKeys(github);
 		setCertifications(certifications);
 		driver.findElement(By.xpath("//textarea[@name='MultiLine']")).clear();
@@ -181,7 +181,7 @@ public class PersonalInfoTests {
 
 	}
 	
-	public void setCertifications(List<String> cert) { // homework  if you create methods becayse you can use it next time
+	public void setCertifications(List<String> cert) { // homework  if you create methods because you can use it next time
 		// and it will be more organized.
 		for (int i = 0; i < cert.size(); i++) {
 			int num = data.number().numberBetween(0,1);
