@@ -38,7 +38,7 @@ public class OrderTest {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.manage().window().fullscreen();
 	}
-	
+//	
 	@BeforeMethod
 	public void setUpApplication() {
 		driver.get("http://secure.smartbearsoftware.com/samples/TestComplete12/WebOrders/Login.aspx");
