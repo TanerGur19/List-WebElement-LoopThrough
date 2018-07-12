@@ -21,7 +21,6 @@ public class DiceJobs {
 		
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		
-		
 		String url="https://dice.com";
 		
 		driver.get(url);

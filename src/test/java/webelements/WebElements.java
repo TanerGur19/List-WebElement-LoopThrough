@@ -21,7 +21,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class WebElements {
 	WebDriver driver;
-	
 
 	@BeforeClass // runs once for all tests
 	public void setUp() {
@@ -86,7 +85,7 @@ public class WebElements {
 
 	@Test
 	public void loopThroughEach() throws InterruptedException {
-		Faker faker= new Faker();
+		Faker faker = new Faker();
 		driver.navigate().to(
 				"https://forms.zohopublic.com/murodil/form/SeleniumWebElements/formperma/eCecYgX4WMcmjxvXVq6UdhA2ABXIoqPAxnAF8H8CCJg");
 		List<WebElement> inputBoxes = driver.findElements(By.xpath("//input[@type='text']"));
@@ -98,49 +97,28 @@ public class WebElements {
 		for (WebElement each : inputBoxes) {
 			each.sendKeys(faker.name().firstName() + " " + faker.name().lastName());
 		}
-		
+
 		for (WebElement each : dropDowns) {
-			
+
 			new Select(each).selectByIndex(faker.number().numberBetween(1, 4));
-			
+
 		}
-		
+
 		for (WebElement each : checkBoxes) {
-			
+
 			each.click();
 		}
-		
+
 		for (WebElement each : radioButtons) {
-			
+
 			Thread.sleep(1000);
 			each.click();
-			
+
 		}
 		for (WebElement each : buttons) {
-		
-		each.click();
-		
-			
+
+			each.click();
+
 		}
 	}
 }
-		
-		
-		
-		
-
-		// List<WebElement> dropDowns = driver.findElements(By.tagName("select"));
-		//
-		//
-		//
-		// for (WebElement s2 : dropDowns) {
-		//
-		// Thread.sleep(3000);
-		// new Select(s2).selectByIndex(faker.number().numberBetween(1, 4));
-		//
-		// }
-		//
-
-	
-
-
