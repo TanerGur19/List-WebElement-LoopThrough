@@ -38,7 +38,7 @@ public class OrderTest {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.manage().window().fullscreen();
 	}
-
+//
 	@BeforeMethod
 	public void setUpApplication() {
 		driver.get("http://secure.smartbearsoftware.com/samples/TestComplete12/WebOrders/Login.aspx");
@@ -71,14 +71,31 @@ public class OrderTest {
 		allOrdersPage= new AllOrdersPage(driver);
 		allOrdersPage.viewAllOrders.click();
 		
-	
+		
 		String actual= driver.findElement(By.xpath("//table[@id='ctl00_MainContent_orderGrid']/tbody/tr[2]")).getText();
 		String expected= "Taner FamilyAlbum 150 07/12/2018 900 Jira ave Arlington   10019 Visa 123457557779 11/31";
 		
-		
-		
-		
 		Assert.assertEquals(actual, expected);
+		
+		
+//		List<WebElement> element= driver.findElements(By.xpath("//table[@id='ctl00_MainContent_orderGrid']/tbody/tr[2]"));
+//	    List<String> actual= new ArrayList<>();
+//
+//		List<String> expected= new ArrayList<>();
+//		
+//		for(int i=1; i<actual.size(); i++) {
+//			
+//			expected.add(actual.get(i).getText());
+//			System.out.println(actual.get(i).getText());
+//		}
+//		//	System.out.println(actual);
+//		System.out.println(expected);
+//		actual.remove(0);
+//		Assert.assertEquals(actual, expected);
+			
+		
+	
+
 		
 		
 		
